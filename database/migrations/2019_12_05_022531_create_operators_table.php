@@ -4,15 +4,16 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Operators extends Migration
+class CreateOperatorsTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
+   
     public function up(){
-        Schema::create('Operators', function (Blueprint $table){
+        Schema::create('operators', function (Blueprint $table){
             $table->bigIncrements('operator_id');
             $table->string('username');
             $table->string('email')->unique();
@@ -31,8 +32,6 @@ class Operators extends Migration
             $table->timestamps();
         });
     }
-// operator_id username Fname Lname O_Password age M_Number O_rank Service_no O_Address cnic
-
     /**
      * Reverse the migrations.
      *
@@ -40,6 +39,6 @@ class Operators extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('operators');
     }
 }

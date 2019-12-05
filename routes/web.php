@@ -14,16 +14,3 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('vendor/add', function () {
-    // return view::make('add');
-    return view('add');
-});
-Route::post('vendor/add', function(){
-
-});
-Route::post('vendor/{id}', function(){
-		
-});
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

@@ -4,25 +4,23 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Mobile extends Migration
+class CreateForumUsersTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up(){
-        Schema::create('Mobile', function (Blueprint $table){
+ 
+public function up(){
+        Schema::create('forum_users', function (Blueprint $table){
             $table->bigIncrements('id');
-            $table->string('mobile_no');
-            $table->string('driver_name');
-            $table->string('Mobile_officer');
-            $table->integer('age');
+            $table->string('Display_name');
+            $table->string('email')->unique();
             $table->rememberToken();
             $table->timestamps();
         });
     }
-// id  mobile_no  driver_name  Mobile_officer no_of_staff location_id
     /**
      * Reverse the migrations.
      *
@@ -30,6 +28,6 @@ class Mobile extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('forum_users');
     }
 }
