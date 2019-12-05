@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::match(['get', 'post'],'Operator-Login', 'OperatorController@login'); //product attibute price
+	 
+Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
